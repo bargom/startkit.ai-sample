@@ -74,7 +74,7 @@ spec:
           value: ${APP_ID}
           type: SECRET
         - key: VITE_API_URL
-          value: ${self.PUBLIC_URL}        
+          value: ${_self.PUBLIC_URL}        
         - key: API_HOST
           value: 0.0.0.0
         - key: API_PORT
