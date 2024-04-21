@@ -72,9 +72,9 @@ spec:
         - key: VITE_API_URL
           value: ${self.PUBLIC_URL}        
         - key: API_HOST
-          value: localhost
+          value: 0.0.0.0
         - key: API_PORT
-          value: '1337'
+          value: '8080'
         - key: MAGIC_LINK_REDIRECT
           value: ${_self.PUBLIC_URL}
     - name: memory
