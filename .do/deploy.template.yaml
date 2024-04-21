@@ -20,7 +20,12 @@ spec:
         match:
           path:
             prefix: /memory
-
+  envs:
+    - key: OPENAI_KEY
+      value: ''
+    - key: OPENAI_ORG_ID
+      value: ''
+  
   services:
     - name: api
       github:
@@ -33,6 +38,9 @@ spec:
       run_command: node server/index.js
       source_dir: /
       envs:
+        - key: JWT_SECRET
+          value: ${JWT_SECRET}
+          type: SECRET
         - key: STRIPE_WEBHOOK_SECRET
           value: ${STRIPE_WEBHOOK_SECRET}
           type: SECRET
@@ -74,10 +82,7 @@ spec:
         - key: API_PORT
           value: '1337'
         - key: MAGIC_LINK_REDIRECT
-          value: ${_self.PUBLIC_URL}
-        - key: JWT_SECRET
-          value: ${JWT_SECRET}
-          type: SECRET
+          value: ${_self.PUBLIC_URL}        
     - name: memory
       dockerfile_path: Dockerfile
       github:
