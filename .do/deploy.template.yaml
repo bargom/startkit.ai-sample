@@ -31,7 +31,7 @@ spec:
       value: ''      
     - key: STRIPE_API_KEY
       value: ''
-    -key: STRIPE_WEBHOOK_SECRET
+    - key: STRIPE_WEBHOOK_SECRET
       value: ''
     - key: RESEND_SENDING_ADDRESS
       value: ''
