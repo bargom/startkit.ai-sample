@@ -64,6 +64,8 @@ spec:
       run_command: node server/index.js
       source_dir: /
       envs:
+        - key: NODE_ENV
+          value: 'production'
         - key: EMBEDDINGS_URL
           value: ${memory.PRIVATE_URL}
         - key: EMBEDDINGS_BEARER_TOKEN
