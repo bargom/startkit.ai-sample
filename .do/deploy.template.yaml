@@ -25,6 +25,32 @@ spec:
       value: ''
     - key: OPENAI_ORG_ID
       value: ''
+    - key: MONGO_URI
+      value: ''
+    - key: JWT_SECRET
+      value: ''      
+    - key: STRIPE_WEBHOOK_SECRET
+      value: ''      
+    - key: RESEND_SENDING_ADDRESS
+      value: ''
+    - key: RESEND_API_KEY
+      value: ''      
+    - key: RESEND_AUDIENCE_ID
+      value: ''
+    - key: STORAGE_URL
+      value: 'https://sfo3.digitaloceanspaces.com'
+    - key: STORAGE_REGION
+      value: 'sfo3'
+    - key: STORAGE_NAME
+      value: 'startkit'
+    - key: STORAGE_KEY
+      value: ''      
+    - key: STORAGE_SECRET
+      value: ''
+    - key: PINECONE_API_KEY
+      value: ''
+    - key: PINECONE_INDEX_HOST
+      value: ''
   
   services:
     - name: api
@@ -38,38 +64,6 @@ spec:
       run_command: node server/index.js
       source_dir: /
       envs:
-        - key: JWT_SECRET
-          value: ${JWT_SECRET}
-          type: SECRET
-        - key: STRIPE_WEBHOOK_SECRET
-          value: ${STRIPE_WEBHOOK_SECRET}
-          type: SECRET
-        - key: MONGO_URI
-          value: ${MONGO_URI}
-        - key: RESEND_SENDING_ADDRESS
-          value: ${RESEND_SENDING_ADDRESS}
-        - key: RESEND_API_KEY
-          value: ${RESEND_API_KEY}
-          type: SECRET
-        - key: RESEND_AUDIENCE_ID
-          value: ${RESEND_AUDIENCE_ID}
-        - key: STORAGE_URL
-          value: ${STORAGE_URL}
-        - key: STORAGE_REGION
-          value: ${STORAGE_REGION}
-        - key: STORAGE_KEY
-          value: ${STORAGE_KEY}
-          type: SECRET
-        - key: STORAGE_SECRET
-          value: ${STORAGE_SECRET}
-          type: SECRET
-        - key: STORAGE_NAME
-          value: ${STORAGE_NAME}
-        - key: OPENAI_KEY
-          value: ${OPENAI_KEY}
-          type: SECRET
-        - key: OPENAI_ORG_ID
-          value: ${OPENAI_ORG_ID}
         - key: EMBEDDINGS_URL
           value: ${memory.PRIVATE_URL}
         - key: EMBEDDINGS_BEARER_TOKEN
@@ -82,7 +76,7 @@ spec:
         - key: API_PORT
           value: '1337'
         - key: MAGIC_LINK_REDIRECT
-          value: ${_self.PUBLIC_URL}        
+          value: ${_self.PUBLIC_URL}
     - name: memory
       dockerfile_path: Dockerfile
       github:
@@ -101,12 +95,7 @@ spec:
           value: text-embedding-3-small
         - key: BEARER_TOKEN
           value: ${APP_ID}
-          type: SECRET
-        - key: PINECONE_API_KEY
-          value: ${PINECONE_API_KEY}
-          type: SECRET
-        - key: PINECONE_INDEX_HOST
-          value: ${PINECONE_INDEX_HOST}
+          type: SECRET       
         - key: OPENAI_API_KEY
           value: ${OPENAI_KEY}
           type: SECRET
