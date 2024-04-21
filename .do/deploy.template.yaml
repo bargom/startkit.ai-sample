@@ -27,8 +27,12 @@ spec:
       value: ''
     - key: MONGO_URI
       value: ''
-    - key: JWT_SECRET
+    - key: JWT_SECRET    
       value: ''      
+    - key: STRIPE_API_KEY
+      value: ''
+    -key: STRIPE_WEBHOOK_SECRET
+      value: ''
     - key: RESEND_SENDING_ADDRESS
       value: ''
     - key: RESEND_API_KEY
