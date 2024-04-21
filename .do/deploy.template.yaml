@@ -29,7 +29,7 @@ spec:
       dockerfile_path: Dockerfile
       http_port: 8080
       instance_count: 1
-      instance_size_slug: basic-xs
+      instance_size_slug: basic-xxs
       run_command: node server/index.js
       source_dir: /
       envs:
@@ -83,11 +83,10 @@ spec:
       dockerfile_path: Dockerfile
       github:
         branch: main
-        deploy_on_push: true
         repo: squarecat/chatgpt-retrieval-plugin
       http_port: 8080
       instance_count: 1
-      instance_size_slug: basic-xs
+      instance_size_slug: basic-xxs
       source_dir: /
       envs:
         - key: DATASTORE
