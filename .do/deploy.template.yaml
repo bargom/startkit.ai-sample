@@ -33,22 +33,18 @@ spec:
       run_command: node server/index.js
       source_dir: /
       envs:
-        - key: API_HOST
-          value: localhost
-        - key: API_PORT
-          value: '1337'
-        - key: MAGIC_LINK_REDIRECT
-          value: ${_self.PUBLIC_URL}
-        - key: JWT_SECRET
-          value: ${JWT_SECRET}
+        - key: STRIPE_WEBHOOK_SECRET
+          value: ${STRIPE_WEBHOOK_SECRET}
           type: SECRET
         - key: MONGO_URI
           value: ${MONGO_URI}
-        - key: EMBEDDINGS_URL
-          value: ${memory.PRIVATE_URL}
-        - key: EMBEDDINGS_BEARER_TOKEN
-          value: ${EMBEDDINGS_BEARER_TOKEN}
+        - key: RESEND_SENDING_ADDRESS
+          value: ${RESEND_SENDING_ADDRESS}
+        - key: RESEND_API_KEY
+          value: ${RESEND_API_KEY}
           type: SECRET
+        - key: RESEND_AUDIENCE_ID
+          value: ${RESEND_AUDIENCE_ID}
         - key: STORAGE_URL
           value: ${STORAGE_URL}
         - key: STORAGE_REGION
@@ -66,19 +62,22 @@ spec:
           type: SECRET
         - key: OPENAI_ORG_ID
           value: ${OPENAI_ORG_ID}
-        - key: RESEND_SENDING_ADDRESS
-          value: ${RESEND_SENDING_ADDRESS}
-        - key: RESEND_API_KEY
-          value: ${RESEND_API_KEY}
+        - key: EMBEDDINGS_URL
+          value: ${memory.PRIVATE_URL}
+        - key: EMBEDDINGS_BEARER_TOKEN
+          value: ${APP_ID}
           type: SECRET
-        - key: RESEND_AUDIENCE_ID
-          value: ${RESEND_AUDIENCE_ID}
         - key: VITE_API_URL
-          value: ${self.PUBLIC_URL}
-        - key: STRIPE_WEBHOOK_SECRET
-          value: ${STRIPE_WEBHOOK_SECRET}
+          value: ${self.PUBLIC_URL}        
+        - key: API_HOST
+          value: localhost
+        - key: API_PORT
+          value: '1337'
+        - key: MAGIC_LINK_REDIRECT
+          value: ${_self.PUBLIC_URL}
+        - key: JWT_SECRET
+          value: ${JWT_SECRET}
           type: SECRET
-
     - name: memory
       dockerfile_path: Dockerfile
       github:
@@ -96,7 +95,7 @@ spec:
         - key: EMBEDDING_MODEL
           value: text-embedding-3-small
         - key: BEARER_TOKEN
-          value: ${EMBEDDINGS_BEARER_TOKEN}
+          value: ${APP_ID}
           type: SECRET
         - key: PINECONE_API_KEY
           value: ${PINECONE_API_KEY}
