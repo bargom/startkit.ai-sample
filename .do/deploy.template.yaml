@@ -64,7 +64,7 @@ spec:
       http_port: 8080
       instance_count: 1
       instance_size_slug: professional-xs
-      run_command: node server/index.js
+      run_command: node --experimental-json-modules server/index.js
       source_dir: /
       envs:
         - key: NODE_ENV
