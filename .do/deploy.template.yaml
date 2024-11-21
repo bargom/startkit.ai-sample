@@ -86,7 +86,7 @@ spec:
       dockerfile_path: Dockerfile
       github:
         branch: main
-        repo: squarecat/chatgpt-retrieval-plugin
+        repo: bargom/chatgpt-retrieval-plugin
       http_port: 8080
       instance_count: 1
       instance_size_slug: professional-xs
